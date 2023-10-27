@@ -1,6 +1,7 @@
 
 - [GIT](#GIT)
 - [SSH para Git](#SSH)
+- [OpenSSH](#OpenSSH)
 - [Control de flujos](#Flujos)
 
 ## GIT
@@ -35,6 +36,18 @@
  
  - **ssh-add ~/.ssh/id_ed25519**
  > Añadimos al agente las credenciales de nuestra clave (como hemos comentado, no necesario)
+ 
+## OpenSSH
+
+Això es el software que faria de servidor SSH, aquí només un apunt, que seria la manera de autoritzar un certificat ja creat.
+
+Bàsicament seria col·locar la clau pública a la ruta del servidor:
+
+```
+A la home de l'usuari amb el que estem entrant
+
+~/.ssh/authorized_keys
+```
 
 ## Flujos
 
