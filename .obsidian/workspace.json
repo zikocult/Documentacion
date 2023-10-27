@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "23e11fb014395719",
+        "id": "563955eddac87fc0",
         "type": "tabs",
         "children": [
           {
-            "id": "71ba61c4032b6e01",
+            "id": "57faf7bcb9b0453f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Markdown/Ejemplo_externo.md",
-                "mode": "preview",
-                "source": true
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Markdown/Ejemplo_externo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Markdown/Ejemplo_externo.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Markdown/Ejemplo_externo.md"
-              }
+              "state": {}
             }
           },
           {
@@ -156,16 +148,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "71ba61c4032b6e01",
+  "active": "57faf7bcb9b0453f",
   "lastOpenFiles": [
     "README.md",
+    "Markdown/Firstexample.md",
+    "Markdown/Ejemplo_externo.md",
     "2023-10-27.md",
     "Sin título.canvas",
     "Sin título 2.canvas",
     "Sin título 1.canvas",
     "Sin título.md",
     "Cursus/01_Ring",
-    "Markdown/Firstexample.md",
     "Cursus",
     "Markdown/Ejemplo externo.md",
     "Sin título 2.md",
