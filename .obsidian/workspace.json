@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "563955eddac87fc0",
+        "id": "5c30f08284bf301e",
         "type": "tabs",
         "children": [
           {
-            "id": "57faf7bcb9b0453f",
+            "id": "e763f1dbd43f021a",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -109,7 +109,7 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": false
+                "useHierarchy": true
               }
             }
           },
@@ -130,12 +130,11 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -148,10 +147,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "57faf7bcb9b0453f",
+  "active": "e763f1dbd43f021a",
   "lastOpenFiles": [
-    "README.md",
+    "Sistemas/Scripts de sistema.md",
+    "Sistemas/Git.md",
     "Markdown/Firstexample.md",
+    "README.md",
+    "Sistemas",
     "Markdown/Ejemplo_externo.md",
     "2023-10-27.md",
     "Sin título.canvas",
