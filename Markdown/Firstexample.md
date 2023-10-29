@@ -23,7 +23,7 @@
 
   - [Imágenes](#Imagen)
 
-  - [Vínculos](#Vinculos)
+  - [Vínculos](#Vínculos)
 
   - [Imágenes](#Imagen)
 
