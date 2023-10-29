@@ -1,6 +1,13 @@
 
+- [Uso de pacman](#Pacman)
 - [Limpieza diferentes extensiones o carpetas en un directorio](#Limpieza)
 - [Monitorización de un sistema completo](#Monitorización)
+
+## Pacman
+
+```bash
+sudo reflector --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist    
+```
 
 ## Limpieza
 
