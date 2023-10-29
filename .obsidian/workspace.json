@@ -11,8 +11,12 @@
             "id": "724e3142a4909530",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Sistemas/Git_SSH.md",
+                "mode": "preview",
+                "source": true
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Sistemas/Git_SSH.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Sistemas/Git_SSH.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Sistemas/Git_SSH.md"
+              }
             }
           },
           {
@@ -138,20 +146,20 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo canvas": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
   "active": "724e3142a4909530",
   "lastOpenFiles": [
+    "Cursus/02_Ring/Born2beroot/Instalación máquina.md",
     "Markdown/Ejemplo_externo.md",
     "Markdown/Firstexample.md",
-    "Cursus/02_Ring/Born2beroot/Instalación máquina.md",
     "Sistemas/Scripts de sistema.md",
     "Sistemas/Git_SSH.md",
     "Cursus/02_Ring/Born2beroot",
