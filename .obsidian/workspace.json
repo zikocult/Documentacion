@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sistemas/Git_SSH.md",
+                "file": "Markdown/Ejemplo_externo.md",
                 "mode": "preview",
                 "source": true
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Sistemas/Git_SSH.md",
+                "file": "Markdown/Ejemplo_externo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Sistemas/Git_SSH.md",
+                "file": "Markdown/Ejemplo_externo.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Sistemas/Git_SSH.md"
+                "file": "Markdown/Ejemplo_externo.md"
               }
             }
           },
@@ -155,13 +155,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "724e3142a4909530",
+  "active": "38755e3c76428deb",
   "lastOpenFiles": [
-    "Cursus/02_Ring/Born2beroot/Instalación máquina.md",
-    "Markdown/Ejemplo_externo.md",
-    "Markdown/Firstexample.md",
     "Sistemas/Scripts de sistema.md",
+    "Markdown/Ejemplo_externo.md",
     "Sistemas/Git_SSH.md",
+    "Cursus/02_Ring/Born2beroot/Instalación máquina.md",
+    "Markdown/Firstexample.md",
     "Cursus/02_Ring/Born2beroot",
     "Cursus/02_Ring",
     "Sin título.canvas",
