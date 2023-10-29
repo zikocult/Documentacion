@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "c8fbb0e77c72ea46",
+        "id": "6038555dc9669802",
         "type": "tabs",
         "children": [
           {
-            "id": "de9bc898c737dbed",
+            "id": "fcbf91147c4f8127",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Markdown/Firstexample.md",
-                "mode": "preview",
-                "source": true
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Markdown/Firstexample.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Markdown/Firstexample.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Markdown/Firstexample.md"
-              }
+              "state": {}
             }
           },
           {
@@ -155,7 +147,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "de9bc898c737dbed",
+  "active": "fcbf91147c4f8127",
   "lastOpenFiles": [
     "Markdown/Firstexample.md",
     "Markdown/Ejemplo_externo.md",
