@@ -11,8 +11,12 @@
             "id": "fcbf91147c4f8127",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Cursus/02_Ring/Born2beroot/Instalación máquina.md",
+                "mode": "preview",
+                "source": true
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Cursus/02_Ring/Born2beroot/Instalación máquina.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Cursus/02_Ring/Born2beroot/Instalación máquina.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Cursus/02_Ring/Born2beroot/Instalación máquina.md"
+              }
             }
           },
           {
