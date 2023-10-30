@@ -5,6 +5,8 @@
 
 - Iniciación a Markdown
 - Estudio diferente lenguajes programación
+    - C/C++ - Curso de programación por Francisco Javier Ceballos
+        - Elementos del lenguaje en C
 - Sistemas UNIX
 - Seguridad informática
 - Seguimiento del Cursus (C / C++ / Bash / Sistemas)
