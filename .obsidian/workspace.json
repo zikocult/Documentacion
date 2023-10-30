@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lenguajes_programación/C C++ Programación por Francisco Javier Ceballos/Elementos del lenguaje C.md",
+                "file": "Lenguajes/C_Cpp_por_Francisco_Javier_Ceballos/Elementos_C.md",
                 "mode": "preview",
                 "source": true
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Lenguajes_programación/C C++ Programación por Francisco Javier Ceballos/Elementos del lenguaje C.md",
+                "file": "Lenguajes/C_Cpp_por_Francisco_Javier_Ceballos/Elementos_C.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Lenguajes_programación/C C++ Programación por Francisco Javier Ceballos/Elementos del lenguaje C.md",
+                "file": "Lenguajes/C_Cpp_por_Francisco_Javier_Ceballos/Elementos_C.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Lenguajes_programación/C C++ Programación por Francisco Javier Ceballos/Elementos del lenguaje C.md"
+                "file": "Lenguajes/C_Cpp_por_Francisco_Javier_Ceballos/Elementos_C.md"
               }
             }
           },
@@ -155,7 +155,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "72b114be01fc26ba",
+  "active": "724e3142a4909530",
   "lastOpenFiles": [
     "README.md",
     "Lenguajes_programación/C C++ Programación por Francisco Javier Ceballos/Elementos del lenguaje C.md",
