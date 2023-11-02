@@ -1,15 +1,37 @@
 
 - [Uso de pacman](#Pacman)
+    - [PKGBUILD](#PKGBUILD)
+    - [Reflector](#Reflector)
 - [Limpieza diferentes extensiones o carpetas en un directorio](#Limpieza)
 - [Monitorización de un sistema completo](#Monitorización)
 
-## Pacman
+---
+# Pacman
+
+
+### PKGBUILD
+
+Para descomprimir debemos realizar el siguiente comando: 
+
+```bash
+makepkg -si
+```
+
+> Este proceso ejecutará la órden ```pacman -U``` automáticamente  
+  
+
+### Reflector
+
+Para el uso de reflector y hacer que pacman esté mas optimizado:
 
 ```bash
 sudo reflector --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist    
 ```
 
-## Limpieza
+---
+
+# Limpieza
+
 
 ```bash
 #!/bin/sh
@@ -20,7 +42,10 @@ find $PWD -iname '*.gch' -print 2>/dev/null -exec rm -f {} \;
 find $PWD -iname '.DS_Store' -print 2>/dev/null -exec rm -f {} \;
 ```
 
-## Monitorización
+---
+
+# Monitorización
+
 
 ```bash
 #!/bin/bash
