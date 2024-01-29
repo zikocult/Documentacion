@@ -1,4 +1,9 @@
 {
-  "accentColor": "",
-  "nativeMenus": true
+  "accentColor": "#0088ee",
+  "nativeMenus": false,
+  "cssTheme": "",
+  "interfaceFontFamily": "JetBrains Mono",
+  "textFontFamily": "JetBrains Mono",
+  "showViewHeader": true,
+  "theme": "obsidian"
 }
