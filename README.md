@@ -3,12 +3,14 @@
   &nbsp;
 ## Temas que se van a incluir:
 
-- Iniciación a Markdown
 - Estudio diferente lenguajes programación
+	- Iniciación a Markdown
     - C/C++ - Curso de programación por Francisco Javier Ceballos
         - Elementos del lenguaje en C
-- Sistemas UNIX
-- Seguridad informática
+- Notas linux y seguridad informática
+- LPCI
+	- Linux Certificate
+	- DevOps
 - Seguimiento del Cursus (C / C++ / Bash / Sistemas)
 	- 01_ring
 		- Libft
