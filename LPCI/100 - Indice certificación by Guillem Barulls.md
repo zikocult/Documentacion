@@ -43,4 +43,17 @@
 		- Carácteres comodín (file globbing)
 		- Búsqueda de archivos
 	- Flujos pipes (tuberías) y redireccionamientos de salida
+		- Redireccionamiento
+		- Tubería (pipe)
+		- Sustitución de comandos
+	- Crear, monitorear y finalizar procesos
+		- Monitorear procesos
+		- Tareas en primer y segundo plano
+	- Modificar la prioridad de ejecución de un proceso
+	- Buscar en archivos de texto usando expresiones regulares
+		- Expresiones regulares
+		- Grep
+		- SED
+	- VI
+
  

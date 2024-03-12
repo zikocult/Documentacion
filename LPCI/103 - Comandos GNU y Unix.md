@@ -260,3 +260,179 @@ find / -type -f -name "*.avi" -exec rm -rf "{}" \;
 ```
 
 ## 4 - Flujos pipes (tuberías) y redireccionamientos de salida
+
+- Descriptor entrada --> STDIN (0) --> suele ser el teclado u otro periférico de entrada
+- Descriptor salida --> STDOUT (1)  --> finalización OK
+- Descriptor de errores --> STDERR (2) --> finalización fallida
+
+**Redireccionamiento**
+
+- \>  --> redirecciona a una salida, creando un fichero nuevo
+- \>> --> Redirecciona a una salida, añadiendo al final del fichero
+- <  --> Redireccionamos un fichero a la entrada estándar.
+- 2> --> Redirecciona los errores (stderr)
+- &> --> Redireccciona los errores y la salida estándar (stderr + stdout)
+
+**Tubería (pipe)**
+
+Con el símbolo \| envíamos la salida de un comando a la entrada del siguiente.
+
+**Sustitución de comandos**
+
+Es posible usar la salida de un comando como argumento para otro usando las comillas invertidas \`\` 
+``` bash
+ls -l `cat /etc/ld.so.con`
+```
+
+Con el comando ==xargs== pasamos los datos que recibe de stdin como argumento para otro comando, este funciona de intermediario.
+
+## 5 - Crear, monitorear y finalizar procesos
+
+Un proceso es un programa en ejecución, cada proceso tiene un PID (número único de identificación)
+
+**Monitorear procesos**
+
+Tenemos diferentes comandos para poder verlos:
+- ps: muestra los procesos activos de manera detallada
+	- ps -ef
+	- ps aux
+	- ps -eo user, pid, ... (escoje columnas)
+	- ps -u apache, root (para realizar filtros)
+- top: monitorea continuamente los procesos, uso de memoria y CPU
+- pstree: muestra procesos activos en árbolps  genealógico (en desuso)
+- kill PID: envía la señal SIGTERM con valor 15, que pide la finalización del proceso (kill -9 PID, se carga el proceso sin solicitar, lo mata)
+- killall: funciona igual que kill pero usa el nombre del proceso en lugar del PID
+
+**Tareas en primer y segundo plano**
+
+Podemos iniciar una tarea en segundo plano añadiendo ==&== al final de la linea del comando.
+
+Con el comando ==jobs== podemos ver todos los procesos que tenemos actualmente en segundo plano.
+
+``` bash
+sleep 100 &
+sleep 300 &
+jobs
+>> [1]-  Running                 sleep 100 &
+>> [2]+  Running                 sleep 300 &
+```
+
+Para detenerlos tenemos dos opciones:
+- Matar el proceso con kill (es un proceso normal con su PID)
+- Devolverlo a primer plano y detenerlo.
+
+Para devolver a primer plano usaremos el comando ==fg (nº de job)==
+
+Y para enviar un proceso a segundo plano de nuevo ==bg (nº de job)==
+
+## 6 - Modificar la prioridad de ejecución de un proceso
+
+Como todos los SOs multitarea se pueden atribuir prioridades a los procesos, estas prioridades se definen con números denominados NI (números nice), usados para modificar la prioridad de CPU y balancear su uso. Por defecto se inicia con prioridad 0.
+
+Los NI van desde la mas baja (19) a la mas alta prioridad (-20), pero sólo root puede cambiar a prioridades por debajo de 0.
+
+Para iniciar un comando con prioridad cambiada usamos ==nice==. 
+
+Para modificar la prioridad de un proceso ya arrancado, usaremos ==renice==.
+
+Con renice también podemos modificar todos los procesos del grupo o usuario.
+
+``` bash
+nice -n [-20 a 19] comando
+renice -n [-20 a 19] -p PID
+renice [-20 a +19] -g/u nombre_grupo/usuario
+```
+
+## 7 - Buscar en archivos de texto usando expresiones regulares
+
+Muchos programas soportan el uso de ==expresiones regulares.==
+
+
+| carácter | Finalidad                                 |
+| -------- | ----------------------------------------- |
+| ^        | Inicio de línea                           |
+| $        | Final de línea                            |
+| .        | Cualquier carácter                        |
+| *        | Cualquier secuencia de 0 o más caracteres |
+| <        | Inicio de palabra                         |
+| >        | Fin de palabra                            |
+| b        | Límite de palabra                         |
+| \        | Evita el significado del sistema          |
+| {4}      | 4 veces                                   |
+| {4,}     | 4 veces o mas                             |
+| {4,10}   | Entre 4 y 10                              |
+| [ ]      | Conjunto de caracteres                    |
+| [^ ]      | Niega el conjunto de caracteres           |
+
+**GREP**
+
+Opciones mas importantes de ==grep==
+
+| Modificador | Descripción                                              |
+| ----------- | -------------------------------------------------------- |
+| -c          | Cuenta las líneas                                        |
+| -i          | Ignora mayúsculas y minúsculas                           |
+| -f          | Usa la expresión regular incluida en el archivo indicado |
+| -n          | Busca solamente en la linea indicada                     |
+| -v          | Muestra lo que NO coincida                               |
+| -w          | Expresión EXACTA                                         |
+| -o          | Patrones (expresiones regulares)                                                         |
+
+``` bash
+Este ejemplo captura las IPs
+grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'
+
+Podría llegar a acortarse como si de aritmética se tratara
+grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}'
+
+Borrar lineas con comentarios
+grep '^#' /etc/lilo.conf
+
+Esta linea monstrara lo que contenga hda o hdb
+grep 'hd[ab]' /etc/lilo.conf
+```
+
+Podemos encontrar diferentes expresiones regulares en:
+
+http://regular-expressions.info/
+https://regex101.com/
+
+Podemos encontrar algunas variaciones de grep:
+
+- egrep: es equivalente a grep -E, puede usar operadores como pipe \| que actrúna como un o. Ej. egrep 'invención|invenciones'
+- fgrep: actua como grep -F con lo que deja de interpretar las expresiones regulares
+
+**SED**
+
+Sed se usa para buscar y sustituir estándares en texto y mostrando el resultado en pantalla, su sintáxis es " sed opciones 'comando y expresión regular' archivo ". No modifica el archivo de origen.
+
+``` bash
+Muestra el contenido sin las lineas iniciadas por #
+sed -e '/^#/d' /etc/lilo.conf
+     |      | 
+  Opcion  Comando
+```
+
+Opciones de SED
+
+| Modificador | Descripción                                                |
+| ----------- | ---------------------------------------------------------- |
+| -e          | Ejecuta la siguiente expresión y comando                   |
+| -f          | lee expresiones y comandos del archivo                     |
+| -n          | no muestra las lineas que no correspondan con la expresión |
+
+Comandos de SED
+
+| Comando | Acción                                                                     |
+| ------- | -------------------------------------------------------------------------- |
+| s       | sustituir                                                                  |
+| d       | borrar linea                                                               |
+| r       | inserta el contenido del archivo indicado en la ocurrencia de la expresión |
+| w       | escribe la salida en el archivo indicado                                   |
+| g       | sustituye todas las ocurrencias de la expresión en la línea actual                                                                           |
+
+## 8 - Vi
+
+Lo mejor en este caso es adjuntar directamente el manual de referencia rápida.
+
+![[vi.pdf]]
