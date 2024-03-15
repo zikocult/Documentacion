@@ -22,6 +22,7 @@ El cargador de Boot carga el kernel y transmite la información sobre la localiz
 	- usr: programas, código fuente y documentación. En otro dispositivo reduce la intensidad de acceso al mínimo.
 	- Algunos directorios NO deben estar fuera de /, serían: /etc, /bin, /sbin, /dev, /proc y /sys.
 
+&nbsp;
 ## 2 - Instalar el gestor de arranque
 
 El bootloader es el responsable de localizar y cargar el kernel y desempeña una etapa intermedia entre el final del procedimientos de la BIOS y el inicio del SO.
@@ -59,6 +60,13 @@ Después de modificar el fichero lilo.conf es importante reinstalar el cargador 
 
 Es el mas usado actualmente, también se instala en la MBR (/sbin/grub-install) y carga las configuraciones de /etc/grub/menu.lst (actualmente con grub2 /boot/grub/grub.cfg y el fichero de configuración en /etc/default/grub)
 
+En grub2 (el actual) crearemos el fichero grub.cfg mediante el siguiente comando:
+
+```bash
+# La opción -o es para indicar el nombre y ubicación del fichero generado
+grub-mkconfig -o /boot/grub/grub.cfg 
+```
+
 **Opciones generales:**
 - default: SO que iniciará por defecto 0.
 - timeout: tiempo de espera en seg para iniciar el boot.
@@ -86,6 +94,7 @@ Podemos restaurar la copia con:
 dd if=mbr.backup of=/dev/hda
 ```
 
+&nbsp;
 ## 3 - Control de bibliotecas compartidas
 
 Funciones comunes de diferentes programas se almacenan en bibliotecas. Para compilar un programa es necesario que pueda localizar las bibliotecas que necesita y así crear vínculos entres sus funciones y las bibliotecas.
@@ -109,7 +118,7 @@ El programa responsable de la carga de la biblioteca y de vincularla es **ld.so*
 
 El ld.so consigue localizar con la ayuda del mapeo encontrado en **/etc/ld.so.cache** (es un binario).
 
-Las bibliotecas estándar del sistema suelen encontrarse en /lib y /usr/lib, si se añaden otros directorios se deben incluir en **/etc/ld.so.conf** o en **/etc/ld.so.conf.d/** 
+Las bibliotecas estándar del sistema suelen encontrarse en /lib y /usr/lib, si se añaden otros directorios se deben incluir en ==/etc/ld.so.conf== o en ==/etc/ld.so.conf.d/==
 
 Actualiza la caché con las conficuraciones de ld:
 
@@ -117,6 +126,15 @@ Actualiza la caché con las conficuraciones de ld:
 ldconfig
 ```
 
+La variable de entorno LD_LIBRARY_PATH contiene las rutas a las librerías del sistema, para añadir podemos usar el .profile del usuario o el general y realizar algo como:
+
+``` bash
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/ziko/work
+```
+
+Fijarse que añado la anterior LD_LIBRARY_PATH antes de exportar, pues si no sólo usaría la que acabo de poner.
+
+&nbsp;
 ## 4 - Utilización del sistema de paquetes DEBIAN
 
 Permite la instalación si que el usuario se deba preocupar por las bibliotecas u otros programas necesarios para la ejecución del mismo ya que cada .deb contiene la información de sus dependencias.
@@ -145,7 +163,7 @@ apt-get update
 ``` bash
 apt-cache search nombre_paquete 
 
-Descripción y detalles de un paquete seleccionado:
+# Descripción y detalles de un paquete seleccionado:
 apt-cache show nombre_programa
 ```
 
@@ -156,10 +174,10 @@ apt-get install nombre_paquete
 
 - Eliminación
 ``` bash
-Simple:
+# Simple:
 apt-get remove nombre_paquete
 
-Paquete y archivos configuración:
+# Paquete y archivos configuración:
 apt-get remove --purge nombre_paquete 
 ```
 
@@ -170,19 +188,20 @@ apt-get upgrade
 
 - Inspección de paquetes con dpkg
 ``` bash
-Estado paquete:
+# Estado paquete:
 dpkg -l nombre_paquete
 
-Busca que paquete instaló el archivo x:
+# Busca que paquete instaló el archivo x:
 dpkg -S nombre_archivo_x
 
-Lista archivos instalados por un paquete:
+# Lista archivos instalados por un paquete:
 dpkg -L nombre_paquete
 
-Lista del contenido del paquete seleccionado:
+# Lista del contenido del paquete seleccionado:
 dpkg --contents paquete.deb
 ```
 
+&nbsp;
 ## 5 - Utilización del sistema de paquetes RPM y YUM / DNF
 
 **RPM**
@@ -211,22 +230,22 @@ Las diferentes opciones de RPM son:
 Hay subopciones que modifican su comportamiento, sobre todo con -q, ejemplo -qc: lista archivos de configuración, el mas interesante es el -q en el fondo.
 
 ``` bash
-Consultamos el paquete nano en el sistema
+# Consultamos el paquete nano en el sistema
 rpm -q nano
 >> nano-5.6.1-5.el9.x86_64
 
-Así me devolverá el fichero de configuración
+# Así me devolverá el fichero de configuración
 rpm -qc nano
 >> /etc/nanorc
 
-Así me devolverá los archivos de documentación
+# Así me devolverá los archivos de documentación
 rpm -qd nano
 >> /usr/share/doc/nano/AUTHORS
 >>/usr/share/doc/nano/COPYING
 >>/usr/share/doc/nano/ChangeLog
 .... (hay mas, pero corto aquí el listado)
 
-Así me listará todos los archivos
+# Así me listará todos los archivos
 rpm -qd nano
 >>/etc/nanorc
 >>/usr/bin/nano
@@ -239,11 +258,11 @@ Con el comando rmp2cpio mostramos el contenido del archivo rpm:
 ``` bash
 rmpm2cpio nombre_paquete.rpm | cpio -t
 
-Para extraer info usaremos cpio de la siguiente manera:
+# Para extraer info usaremos cpio de la siguiente manera:
 
 rmpm2cpio nombre_paquete.rpm | cpio -ivd '*.pdf'
 
-Con eso extraemos los pdfs del nombre_paquete.rpm
+# Con eso extraemos los pdfs del nombre_paquete.rpm
 ```
 
 **YUM**
@@ -260,24 +279,27 @@ El archivo de configuración es **/etc/yum.conf** y algunas de sus opciones son:
 
 Funciones del comando:
 
-``` bash
-Localiza un paquete
+```bash
+# Localiza un paquete
 >> yum search nombre_paquete
 
-Instala un paquete
+# Instala un paquete
 >> yum install nombre_paquete
 
-Desinstala un paquete
+# Desinstala un paquete
 >> yum remove/erase nombre_paquete
 
-Localiza un paquete que ofrece un recurso determinado
+# Localiza un paquete que ofrece un recurso determinado
 >> yum provides/whatprovides recurso_a_buscar
 
-Actualiza los paquetes
+# Actualiza los paquetes
 >> yum update
 
-Igual que update pero también actualiza la distribución
+# Igual que update pero también actualiza la distribución
 >> yum upgrade
+
+# Instala un grupo entero de paquetes (p.e. admintools)
+yum groupinstall admintools
 ```
 
 Con el siguiente comando, podemos descargarlo sin tener que instalar:
@@ -285,3 +307,60 @@ Con el siguiente comando, podemos descargarlo sin tener que instalar:
 ``` bash
 yumdownloader nombre_paquete
 ```
+
+**ZYPPER**
+
+Se trata del package manadger de Suse Linux, no me voy a extender en esta explicación, pues funciona similar a yum, añado el link de documentación de Suse linux.
+
+https://documentation.suse.com/smart/systems-management/html/concept-zypper/index.html
+
+&nbsp;
+## 6 - Virtualización  en Linux
+
+Estos serían los programas de virtualización mas usados.
+
+
+| **Software**    | **Breve explicación**                                                                                                               |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| **KVM**         | muy recomendable, funciona como hypervisor                                                                                          |
+| **XEN**         | muy antiguo, pero tiene mas seguridad                                                                                               |
+| **proxmox**     | dentro de las opciones opensource es la mas profesional                                                                             |
+| **VMWARE ESXI** | sistema de pago, hasta ahora el mas usado por empresas, pero con problemas desde la adquisición por parte de DELL con las licencias |
+| **VirtualBox**  | a nivel usuario muy bueno                                                                                                           |
+
+**D-Bus Machine ID**
+
+Muchas instalaciones de Linux utilizarán un número de identificación de máquina generado en el momento de la instalación, llamado D-Bus machine ID.
+
+El siguiente comando se puede usar para validar que existe una ID de máquina D-Bus para el sistema en ejecución:
+
+``` bash
+dbus-uuidgen --ensure
+```
+
+Si no se muestran mensajes de error, existe una ID para el sistema. Para ver la ID actual de la máquina D-Bus, ejecute lo siguiente:
+
+```bash
+dbus-uuidgen --get
+>> b59994c2eec7435ba817ce5e1286b6cf
+```
+
+La ID de la máquina se encuentra en ==/var/lib/dbus/machine-id==.
+
+**Acceso seguro (SSH)**
+
+La forma mas habitual de acceso seguro sería mediante la creación de clave privada, clave pública, así que deberíamos ejecutar el siguiente comando para crear el par.
+
+```bash
+ssh-keygen
+```
+
+Se seguirán los pasos que va solicitando y se almacenarán las clave por defecto en ~/.ssh/
+
+En ese momento ejecutaríamos:
+
+``` bash
+ssh-copy-id -i <public_key> user@cloud_server
+```
+
+Copiando de esta manera nuestra clave pública al servidor destino, dicha clave se registrará en el archivo ~/.ssh/authorized_keys del servidor.

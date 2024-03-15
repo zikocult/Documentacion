@@ -5,5 +5,7 @@
   "interfaceFontFamily": "JetBrains Mono",
   "textFontFamily": "JetBrains Mono",
   "showViewHeader": true,
-  "theme": "obsidian"
+  "theme": "obsidian",
+  "monospaceFontFamily": "JetBrainsMono Nerd Font",
+  "baseFontSize": 15
 }

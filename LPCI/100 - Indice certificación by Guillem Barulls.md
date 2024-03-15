@@ -9,6 +9,8 @@
 	- Cambiar runlevels, apagar y reiniciar el sistema
 		- Los niveles de ejecución
 		- Numeración de los runlevels
+		- SysVinit
+		- SystemD
 		- Apagar y reiniciar
 
 &nbsp;
@@ -25,7 +27,10 @@
 		- Identificar bibliotecas compartidas
 		- Localización de las bibliotecas
 	- Utilización del sistema de paquetes DEBIAN (apt y dpkg)
-	- Utilización del sistema de paquetes Red Hat (rpm y yum / dnf)
+	- Utilización del sistema de paquetes Red Hat (rpm, yum / dnf y zipper)
+	- Virtualización  en Linux
+		- D-Bus Machine ID
+		- Acceso seguro (SSH)
 
 &nbsp;
 -  103 - Comandos GNU y Unix
@@ -55,5 +60,31 @@
 		- Grep
 		- SED
 	- VI
+
+&nbsp;
+- 104 - Dispositivos, sistemas de archivos y FHS
+	- Crear particiones y sistemas de archivos
+		- fdisk
+		- PARTED
+		- Creación del sistema de archivos
+		- Partición Swap
+	- Mantenimiento de la integridad de sistemas de archivos
+		- Chequeo sistema archivos
+		- Correción del sistema de archivos
+		- Análisis del espacio de disco
+	- Control y montaje de los sistemas de archivos
+		- Fstab
+		- Montaje manual de sistemas de archivos
+	- Administrar cuotas de disco
+	- Controlar permisos y propiedades de los archivos
+		- Modificación de permisos
+		- Permisos octales
+		- Umask
+		- Setuid, sguid y sticky bit
+		- Modificar dueños y grupos de archivos
+	- Archivos de sistema, ordenación y localización
+		- Directorios que residen obligatoriamente en raíz
+		- Directorios que pueden ser puntos de montaje
+		- Localización de archivos
 
  
