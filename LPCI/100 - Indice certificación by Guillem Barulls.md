@@ -1,4 +1,4 @@
-1. 101 - Arquitectura de sistema
+1. [101 - Arquitectura de sistema](./101_Arquitectura)
 	- Identificar y editar configuraciones de hardware
 		- Activación de dispositivos
 		- Inspección de dispositivos
@@ -14,7 +14,7 @@
 		- Apagar y reiniciar
 
 &nbsp;
-- 102 - Instalación de Linux y administración de paquetes
+- [102 - Instalación de Linux y administración de paquetes](./102_Instalacion_administracion.md)
 	- Dimensionar las particiones del disco
 		- Sistema archivos raíz
 		- Orden de montaje a partir del Boot
@@ -33,7 +33,7 @@
 		- Acceso seguro (SSH)
 
 &nbsp;
--  103 - Comandos GNU y Unix
+-  [103 - Comandos GNU y Unix](./103_comandos.md)
 	- Trabajar en la línea de comandos
 		- Shell Bash
 		- Variables
@@ -62,7 +62,7 @@
 	- VI
 
 &nbsp;
-- 104 - Dispositivos, sistemas de archivos y FHS
+- [104 - Dispositivos, sistemas de archivos y FHS](./104_Sistema_archivos.md)
 	- Crear particiones y sistemas de archivos
 		- fdisk
 		- PARTED

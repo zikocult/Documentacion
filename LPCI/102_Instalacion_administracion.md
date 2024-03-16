@@ -310,7 +310,7 @@ yumdownloader nombre_paquete
 
 **ZYPPER**
 
-Se trata del package manadger de Suse Linux, no me voy a extender en esta explicación, pues funciona similar a yum, añado el link de documentación de Suse linux.
+Se trata del package manager de Suse Linux, no me voy a extender en esta explicación, pues funciona similar a yum, añado el link de documentación de Suse linux.
 
 https://documentation.suse.com/smart/systems-management/html/concept-zypper/index.html
 
