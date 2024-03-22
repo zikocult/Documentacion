@@ -1,0 +1,165 @@
+set $mod Mod4
+
+# Configuracion de inici
+# He posat el feh dins del script de doble pantalla
+exec setxkbmap -layout es
+exec picom -b -f
+exec --no-startup-id blueman-applet
+exec --no-startup-id nm-applet
+exec --no-startup-id alternating_layouts.py
+exec --no-startup-id ~/.config/i3/scripts/doble_pantalla.sh
+font pango: JetBrains Mono 12
+
+# Colorejar la finestra que té el focus, ara mateix molt fosc
+client.focused #0088ee #0088ee #0088ee #0088ee
+# client.focused #088080 #088080 #088080 #088080
+
+# Gaps Configuraciones
+gaps outer 3
+gaps inner 8
+
+# Treure el titol i la vora de la finestra
+for_window [class="^.*"] border pixel 3
+hide_edge_borders both
+
+# Bloquejador de pantalla
+exec_always --no-startup-id xset dpms 0 0 120 &
+exec_always --no-startup-id xss-lock -- i3lock -n -i ~/Imagenes/Wallmine/wallhaven-kwvz8m.png &
+bindsym $mod+l exec i3lock -n -i ~/Imagenes/Wallmine/wallhaven-o3djo7.png &
+
+# Config per pujar i baixar volum amb les tecles
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks 
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
+
+# Brillo de la pantalla
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
+
+# Mouse configuracions
+floating_modifier $mod
+focus_follows_mouse no
+
+# Personal Keybindings
+bindsym $mod+q kill
+bindsym $mod+w exec firefox
+bindsym $mod+o exec obsidian 
+bindsym $mod+c exec code 
+bindsym $mod+s exec spotify --title 'Spotify'
+bindsym $mod+d exec rofi -show drun -show-icons
+bindsym $mod+Return exec kitty --session startup_session_i3
+bindsym $mod+b bar mode toggle
+
+# Inici en escritoris determinats
+assign [class="krusader"] $ws3
+assign [class="code"] $ws4
+assign [class="obsidian"] $ws5
+assign [class="libreoffice"] $ws6
+assign [class="Spotify"] $ws10
+
+# dmenu opcions perzonalitzades
+bindsym $mod+f exec ~/.config/i3/scripts/sistema.sh
+bindsym $mod+e exec ~/.config/i3/scripts/exploradors.sh
+bindsym $mod+p exec ~/.config/i3/scripts/canvi_pantalla.sh
+bindsym $mod+x exec ~/.config/i3/scripts/apagar_sistema.sh
+bindsym $mod+g exec ~/.config/i3/scripts/inici_jocs.sh
+
+# Config per usar les tecles i no VIM movement
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Config per usar les tecles i no VIM movement
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Canvi de layout (stacked, tabbed, toggle split, fullscreen)
+bindsym $mod+Shift+f fullscreen toggle
+bindsym $mod+Shift+v layout splitv
+bindsym $mod+Shift+h layout splith
+bindsym $mod+Shift+w layout tabbed
+bindsym $mod+Shift+e layout toggle split
+
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+# Focus the parent container
+bindsym $mod+a focus parent
+
+# Configuració del nom de tots els escritoris
+set $ws1 "1:󰄛 "
+set $ws2 "2: "
+set $ws3 "3: "
+set $ws4 "4: "
+set $ws5 "5: "
+set $ws6 "6: "
+set $ws7 "7: "
+set $ws8 "8:󱐋 "
+set $ws9 "9: "
+set $ws10 "10: "
+
+# Moure al escritori x
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# Moure la finestra focus al escritori x
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# Rellançar tot I3
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+
+
+# Redimensionar la finestra (es pot usar el mouse)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+        bindsym Left resize shrink width 3 px or 3 ppt
+        bindsym Down resize grow height 3 px or 3 ppt
+        bindsym Up resize shrink height 3 px or 3 ppt
+        bindsym Right resize grow width 3 px or 3 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Configuració de la barra
+bar {
+	position top
+    status_command i3blocks
+	height 28 
+	colors {
+        background #222222
+		statusline #eeeeee
+		separator #666666
+        #                  border  backgr. text
+		focused_workspace  #444444 #444444 #088080
+		active_workspace   #333333 #5f676a #ffffff
+		inactive_workspace #333333 #222222 #888888
+		urgent_workspace   #2f343a #AAAAFF #ffffff
+	}
+}

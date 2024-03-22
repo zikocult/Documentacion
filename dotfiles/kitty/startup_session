@@ -1,0 +1,5 @@
+enabled_layouts fat, tall, grid
+layout grid 
+
+os_window_size 170c 36c
+os_window_state normal
