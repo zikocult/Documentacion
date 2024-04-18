@@ -1,18 +1,24 @@
 # Recopilación documentación
 
+Aquí voy subiendo toda la documentación que estoy generando poco a poco, la creo con Obsidian, con lo que se encontrará en formato MD y en algunos casos serán importados a PDF.
+
+Dicha documentación al ser de uso personal, será subida en castellano.
+
+Este repositorio es de largo recorrido, no será inmediato y se irá rellenando a medida que vaya avanzando en cada uno de los temas.
+
   &nbsp;
 ## Temas que se van a incluir:
 
 - Estudio diferente lenguajes programación
 	- Iniciación a Markdown
-    - C/C++ - Curso de programación por Francisco Javier Ceballos
         - Elementos del lenguaje en C
 - Notas linux y seguridad informática
 - LPCI
-- Git and Github
-- Docker, docker compose, Kubernetes
-- Ansible
-- Vagrant
+- DevOps
+	- Git, Github
+	- Docker, docker compose, Kubernetes
+	- Ansible
+	- Vagrant
 - Seguimiento del Cursus (C / C++ / Bash / Sistemas)
 	- 01_ring
 		- Libft
