@@ -9,8 +9,10 @@
         - Elementos del lenguaje en C
 - Notas linux y seguridad informática
 - LPCI
-	- Linux Certificate
-	- DevOps
+- Git and Github
+- Docker, docker compose, Kubernetes
+- Ansible
+- Vagrant
 - Seguimiento del Cursus (C / C++ / Bash / Sistemas)
 	- 01_ring
 		- Libft
@@ -23,3 +25,13 @@
 	- 05_ring
 	- 06_ring
 	- 07_ring
+
+##
+
+<div align="center">
+  <br>
+  <a href = "mailto:gbarulls@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></a>
+  <a href="https://www.linkedin.com/in/guillem-barulls-casades%C3%BAs-9906001a/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+</div>
+
+##
