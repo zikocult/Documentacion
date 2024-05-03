@@ -6,7 +6,59 @@
 - [Monitorización de un sistema completo](#Monitorización)
 
 ---
-# Pacman
+# Pacman:
+
+Toda la info mas extensa la podemos encontrar en [Archlinux.org](https://archlinux.org/pacman/pacman.8.html)
+
+***Nota importante*** PARU y YAY usan el mismo tipo de notación para los parámetros, con alguna ligera diferencia.
+
+- Instalar un paquete
+
+```bash
+pacman -S <paquete>
+```
+
+- Remover un paquete
+
+```bash
+pacman -R <paquete>
+```
+
+- Buscar un paquete
+
+```bash
+pacman -Ss <paquete>
+```
+
+- Purgar un paquete
+
+```bash
+pacman -Rns <paquete>
+```
+
+- Query options
+
+```bash
+pacman -Q
+```
+
+- Actualizar el sistema
+
+```bash
+pacman -Syyu
+```
+
+- Paquetes huerfanos
+
+```bash
+pacman -Qdtq
+```
+
+- Para remover los paquetes huerfanos, usaremos una combinación de -R y el anterior comando
+
+```bash
+pacman -R $(pacman -Qtdq)
+```
 
 
 ### PKGBUILD
@@ -17,9 +69,8 @@ Para descomprimir debemos realizar el siguiente comando:
 makepkg -si
 ```
 
-> Este proceso ejecutará la órden ```pacman -U``` automáticamente  
+> Este proceso ejecutará la órden ```pacman -U``` automáticamente 
   
-
 ### Reflector
 
 Para el uso de reflector y hacer que pacman esté mas optimizado:

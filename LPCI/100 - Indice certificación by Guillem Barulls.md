@@ -87,4 +87,30 @@
 		- Directorios que pueden ser puntos de montaje
 		- Localización de archivos
 
- 
+&nbsp;
+- [105 - Shells, scripts y administración de datos](./105_Shells_scripts_y_admin_datos)
+	- Personalizar y trabajar en el entorno de shell
+		- Variables
+			- Globales
+			- Locales
+		- Funciones
+		- Archivos de configuración de bash
+	- Editar y escribir scripts simples
+		- Definición del interpretador
+		- Variables especiales
+		- IF then else
+		- Case
+		- Sustitución de comandos
+		- Operaciones matemáticas
+		- For
+		- Until
+		- While
+	- Administración datos SQL
+		- Interactuar con los datos
+		- Consultas de datos
+		- Modificación y borrado
+		- Relación de tablas
+
+&nbsp;
+- [106 - Interfaces de usuario y escritorio](./106_Interfaces_de_usuario_y_de_escritorio)
+	- 

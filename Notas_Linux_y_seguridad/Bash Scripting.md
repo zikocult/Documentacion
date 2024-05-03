@@ -1,9 +1,90 @@
 # Indice
 
+- [FOR](#for)
+- [IF](#if)
 - [AWK](#awk)
   - [Condiciones AWK](#Condiciones_AWK)
   - [Comandos](#Comandos_AWK)
 
+
+## **FOR**
+
+El uso del bucle FOR es muy sencillo, con un ejemplo creo que quedará claro
+
+```bash
+#!/bin/bash
+
+for i in {1..1000}; 
+do
+	echo $i
+done
+```
+
+## **IF**
+
+El else es una alternativa lógicamente, pero lo añado con todo.
+
+```bash
+#!/bin/bash
+
+if [condition]; then
+	condition
+elif [condition]; then
+	condition
+else
+	condition
+fi
+```
+
+Son importantes los espacios antes y después de la condición, añado ejemplo rápido.
+
+```bash
+#!/bin/bash
+
+echo "Please enter your username"
+read NAME
+
+if [ "$NAME" = "Guillem" ]; then
+	echo "Welcome Guillem"
+elif [ "$NAME" = "Ziko" ]; then
+	echo "Bueno, pasa, pero no vuelvas"
+else
+	echo "You are not Guillem, you are $NAME"
+fi
+
+```
+
+Diferentes opciones para las evaluaciones, vamos a ver unas cuantas:
+
+| Archivos y directorios | Descripción                                |
+|:----------------------:| ------------------------------------------ |
+|        -d path         | true si el path existe y es un directorio  |
+|        -c path         | true si existe el path                     |
+|        -f path         | true si existe y es un archivo             |
+|        -L path         | true si existe y es un enlace simbólico    |
+|        -r path         | true si existe y puede leerse              |
+|        -s path         | true si existe y su tamaño es superior a 0 |
+|        -w path         | true si existe y puede escribirse          |
+|        -x path         | true si existe y es ejecutable             |
+|    path1 -ot path2     | true si path1 es diferente a path2         |
+
+
+| Evaluación de texto | Descripción                            |
+|:-------------------:| -------------------------------------- |
+|      -n texto       | si el tamaño del texto es distinto a 0 |
+|      -z texto       | si el tamaño del texo es igual a 0     |
+|   texto1\==texto2   | si texto1 es igual que texto2          |
+|   texto1!=texto2    | si texto1 es distinto a texto2         |
+
+
+| Evaluación numérica | Descripción     |
+|:-------------------:| --------------- |
+|    num1 -lt num2    | si num1 < num2  |
+|    num1 -gt num2    | si num1 > num2  |
+|    num1 -le num2    | si num1 <= num2 |
+|    num1 -ge num2    | si num1 >= num2 |
+|    num1 -eq num2    | si num1 = num2  |
+|    num1 -ne num2    | si num1 != num2 |
 
 ## **AWK**
 
