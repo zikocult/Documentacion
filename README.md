@@ -11,7 +11,6 @@ Este repositorio es de largo recorrido, no será inmediato y se irá rellenando 
 
 - Estudio diferente lenguajes programación
 	- Iniciación a Markdown
-        - Elementos del lenguaje en C
 - Notas linux y seguridad informática
 - LPCI
 - DevOps
