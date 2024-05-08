@@ -113,4 +113,52 @@
 
 &nbsp;
 - [106 - Interfaces de usuario y escritorio](./106_Interfaces_de_usuario_y_de_escritorio)
-	- 
+	- Instalar y configurar X11
+		- Hardware
+		- Instalación y configuración
+		- Xorg.conf
+		- Fuentes
+		- DISPLAY
+	- Configuración del gestor de login gráfico
+	- Accesibilidad
+
+&nbsp;
+- [107 - Tareas administrativas](./107_Tareas_administrativas)
+	- Cuentas de usuarios
+	- Grupos de usuarios
+	- Automatizar y programar tareas
+		- AT
+		- Cron
+	- Localización e internacionalización
+
+&nbsp;
+- [108 - Servicios esenciales del sistema](./108_Servicios_esenciales_del_sistema)
+	- Mantenimiento de la fecha y hora del sistema
+	- Configurar y recurrir a los archivos LOG
+	- Fundamentos MTA: Mail Transfer Agent
+	- Configuración de impresoras e impresión (CUPS)
+
+&nbsp;
+- [109 - Fundamentos de red](./109_Fundamentos_de_red)
+	- Fundamentos de los protocolos de internet (IP)
+	- Configuración básica de red
+	- Soluciones de problemas simples
+
+&nbsp;
+- [110 - Seguridad](./110_Seguridad)
+	- Permisos y root
+		- Verificación de permisos
+		- Acceso como root
+	- Red y seguridad del host
+		- Verificación puertos abiertos en el sistema
+		- Desactivación de servicios de red
+		- TCP_Wrapers
+	- Protección de datos con encriptación
+		- Openssh
+		- Túneles encriptados
+		- X remoto por SSH
+		- Firma GnuPG
+
+## EXTRA
+
+![[terminal-cheatsheet.pdf]]
