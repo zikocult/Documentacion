@@ -175,7 +175,7 @@ Lo siguiente ejecuta cada 4 horas de martes a sábado los meses de Mayo y Junio
 
 Si la tarea produce alguna salida se enviará a la caja de entrada del usuario, pero podemos evitar eso redireccionando a /dev/null o a un archivo.
 
-Controlamos el uso de crontab mirando en los archivos */etc/cron.allow y /etc/cron.deny*. Si no existe ninguno de los archivos, TODOS los usuarios podrán programar tareas.
+Controlamos el uso de crontab mirando en los archivos */etc/cron.allow y /etc/cron.deny*. Si no existe ninguno de los archivos, SÓLO ROOT podrá programar tareas, aunque eso puede variar según la distribución que usemos.
 
 ## 4. Localización e internaciionalización
 
