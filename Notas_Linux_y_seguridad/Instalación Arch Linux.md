@@ -172,7 +172,7 @@ mount /dev/sdx (particion fat32 creada antes) /boot/efi
 grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi
 grub-mkconfig -o /boot/grub/grub.cfg
 mkdir /boot/efi/EFI/BOOT
-cp /boot/efi/GRUB/grubx64.efi /boot/efi/EFI/BOOT/BOOTx64.EFI
+cp /boot/efi/EFI/GRUB/grubx64.efi /boot/efi/EFI/BOOT/BOOTx64.EFI
 vi /boot/efi/startup.nsh
    1   │ bcf boot 1 fs0:\EFI\GRUB\grubx64.efi
    2   │ "My GRUB boot loader"
