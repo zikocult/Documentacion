@@ -1,11 +1,11 @@
 {
   "accentColor": "#0088ee",
   "nativeMenus": false,
-  "cssTheme": "",
-  "interfaceFontFamily": "JetBrains Mono",
-  "textFontFamily": "JetBrains Mono",
+  "cssTheme": "Obsidian Nord",
+  "interfaceFontFamily": "Poppins",
+  "textFontFamily": "Poppins",
   "showViewHeader": true,
-  "theme": "moonstone",
-  "monospaceFontFamily": "JetBrainsMono Nerd Font",
+  "theme": "obsidian",
+  "monospaceFontFamily": "Fira Code",
   "baseFontSize": 15
 }

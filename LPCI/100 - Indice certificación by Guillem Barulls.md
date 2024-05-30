@@ -1,4 +1,4 @@
-1. [101 - Arquitectura de sistema](./101_Arquitectura)
+- [101 - Arquitectura de sistema](./101_Arquitectura)
 	- Identificar y editar configuraciones de hardware
 		- Activación de dispositivos
 		- Inspección de dispositivos
