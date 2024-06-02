@@ -1,3 +1,7 @@
+La mayoría de este documento, está sacado en gran medida del libro **Aprendiendo Git Github ** de  **Miguel Ángel Durán (midudev)**, un gran agradecimiento a él y su esfuerzo:
+
+![[Pasted image 20240531163527.png]]
+
 # Index
 
 - [Instalación](##Instalación)
@@ -9,6 +13,9 @@
 	- [¿Qué es el Head?](###HEAD)
 	- [¿Como deshacer mis cambios?](###Deshacer_cambios)
 	- [¿Como ignorar archivos](###Ignorar_archivos)
+	- [Seguimiento de uno o varios archivos](###Seguimiento)
+- [Ramas en Git](##Ramas)
+	- [Creación de ramas](###Creación_ramas)
 
 ## Instalación
 
@@ -395,3 +402,116 @@ build/ # Ignorar carpeta generada
 - Coverage del testing (/coverage)
 
 Echar un vistazo a [gitignore.io](https://www.toptal.com/developers/gitignore)
+
+Hay una manera de ignorar archivos en todos tus repositorios de forma global y es creando el archivo **~/.gitignore_global**.
+
+Esto podría ser un ejemplo de fichero:
+
+```bash
+# Archivos y directorios de sistema
+.DS_Store
+Desktop.ini
+Thumbs.db
+.Spotlight-V100
+.Trashes
+
+# Variables de entorno
+.env
+
+# Directorios de instalacio y cache
+node_modules
+.sass-cache
+
+# Configuracion del editor
+### Visual Studio Code ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+```
+
+Una vez creado, debemos actualizar la configuración de core.excludesfile para que lea de forma global.
+
+```bash
+git config --global core.excludesfile ~/.gitignore_global
+```
+
+Podemos encontrar una colección de archivos gitignore, hecho por parte de GitHub, en el siguiente enlace:
+
+[Gitignore by GitHub](https://github.com/github/gitignore)
+
+### Seguimiento
+
+Todos los ficheros en si dentro del repositorio, tienen su seguimiento a excepción de como hemos visto antes de si están incluidos en el fichero .gitignore, pero que hacemos si ya hemos añadido un fichero y queremos que no siga subiendo, pues encontramos dos maneras según el caso.
+
+#### De forma manual:
+
+Podemos directamente borrar el fichero del directorio que sean parte del repositorio, añadirlo al fichero .gitignore y luego hacer un commit:
+
+```bash
+rm config.local.js
+git add config.local.js
+git commit -m "Removing no needed files"
+```
+
+De esta forma, la próxima vez que añadamos el fichero, ya no se subirá al repositorio ya que lo tendremos ignorado.
+
+#### Usando git....
+
+Esto mismo se puede conseguir usando un simple comando git, siguiendo el ejemplo anterior sería:
+
+```bash
+git rm config.local.js
+git commit -m "Remove config.local.js to ignore it"
+```
+
+Razones para usar este método:
+
+- *rm* es un comando de sistema y no de git.
+- *git rm* es sólo un comando y simplifica la tarea de borrar archivos de un repositorio.
+- *git rm* va a evitar que se borre si el archivo tiene alguna modificación.
+- Puedes usar el parámetro *--dry-run* para ver que ficheros se borrarán
+
+#### Manteniendo el fichero en el directorio de trabajo
+
+Para conseguir eso, debemos realizarlo añadiendo el parámetro --cached a git rm.
+
+```bash
+git rm --cached <nombre del archivo>
+```
+
+Si fuera necesario borrar una carpeta y todos los ficheros, se deberá añadir el parámetro -r.
+
+## Ramas
+
+Una rama es una versión del repositorio que se crea a partir de un commit.
+
+El término rama de Git diverge de las ramas de un árbol, pues en el caso del árbol, las ramas crecen y nunca vuelven al tronco, en Git, las ramas puede divergir y luego reunirse de nuevo, es mas como una salida de autopista que se puede reconectar con la vía principal.
+
+![[Pasted image 20240531165142.png]]
+
+La creación de ramas nos permite el trabajo en paralelo sobre una misma base de código.
+
+Al grabar cambios con commits en una rama, se genera una bifurcación en el historia de cambios del proyecto.
+
+### Creación_ramas
+
+El comando *git branch* es el que nos permite crear, listar, eliminar y renombrar ramas. Al crear una rama, para movernos a ella, tendremos que usar el comando *git switch*.
+
+```bash
+# creamos la rama mi-primera-rama
+git branch mi-primera-rama
+
+# cambiamos a la rama mi-primera-rama
+git switch mi-primera-rama
+$ Switched to branch 'mi-primera-rama'
+
+# para realizar las dos acciones anteriores a la vez (crear y cambiar de rama)
+git switch -c mi-primera-rama
+
+# esto es lo que sucede si intentamos crear una rama con el mismo nombre
+git switch -c mi-primera-rama
+$ fatal: A branch named 'mi-primera-rama' already exists.
+```
