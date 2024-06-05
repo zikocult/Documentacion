@@ -16,6 +16,9 @@ La mayoría de este documento, está sacado en gran medida del libro **Aprendien
 	- [Seguimiento de uno o varios archivos](###Seguimiento)
 - [Ramas en Git](##Ramas)
 	- [Creación de ramas](###Creación_ramas)
+	- [Listando las ramas disponibles](###Listando_ramas)
+	- [Trabajando con ramas](###Trabajando_con_ramas)
+	- [Fusionando ramas](###Fusionado_ramas)
 
 ## Instalación
 
@@ -515,3 +518,144 @@ git switch -c mi-primera-rama
 git switch -c mi-primera-rama
 $ fatal: A branch named 'mi-primera-rama' already exists.
 ```
+
+#### *git checkout*, el comando que hacía demasiadas cosas.
+
+El siguiente comando crearía y cambiaría a mi-primera rama directamente:
+
+```bash
+git chekout -b mi-primera-rama
+& Switched to a new branch 'mi-primera-rama'
+```
+
+Esto no sigue la filosofía Unix de que un programa haga una cosa y la haga bien, por esto se crearon en 2019 los comandos *git switch* y *git restore*, y por compatibilidad git checkout no puede volver al estado anterior, así que es mejor usar ya los comando nuevos y olvidar este comando.
+
+###  Listando_ramas
+
+Sólo se debe ejecutar el comando *git branch*:
+
+```bash
+git branch
+$ feat/remove-husky-usage
+$ feat/remove-not-needed-deps
+$ * feat/sui-bundler
+$ master
+```
+
+La rama que tiene un * significa que actualmente te encuentras en esa rama.
+
+Para averigurar con un comando en que rama estamos sería *git branch --show-current*
+
+Para averiguar las ramas mas recientes, usaremos el parámetro --sort y el valor committerdate para ordenar las ramas por fecha de creación.
+
+```bash
+# El comando completo quedaría como:
+
+git branch --sort=-committerdate
+```
+
+### Trabajando_con_ramas
+
+Podemos usar [visualizing git](https://git-school.github.io/visualizing-git/) para ver como avanza a mediado que vamos añadiendo comandos, es una gran herramienta para practicar, pero vamos a avanzar paso a paso y de forma lo mas ilustrada posible en este documento.
+
+```bash
+# Empezamos con la rama principal master
+
+git branch --show-current
+$ master
+
+# grabamos un commit en la rama principal
+git commit -am "first commit"
+```
+
+![[Pasted image 20240605233836.png]]
+
+Vamos a ir viendo como cambia el puntero HEAD conforme nos vayamos "moviendo"
+
+```bash
+# Creamos nuestra primera rama y cambiamos a ella para empezar a trabajar
+
+git switch -c my-branch
+$ Switched to a new branch 'my-branch'
+```
+
+![[Pasted image 20240605234708.png]]
+
+Como podemos ver el puntero HEAD ahora mismo está en la rama master y my-branch ambas apuntan al mismo commit.
+
+```bash
+# estamos en la rama my-branch
+
+git branch --show-current
+$ my-branch
+
+# modificamos los ficheros necesarios desde el editor
+
+nvim test.c
+
+# si el fichero fuera nuevo debería añadirlo con git add test.c
+# vamos a pensar que sólo es una modificación
+
+git commit -am "branch commit"
+$ [my-branch afaf06b] first branch commit
+$ 1 file changed, 5 insertions(+), 0 deletions(-)
+```
+
+![[Pasted image 20240605235256.png]]
+
+El commit se añade en la rama my-branch. el HEAD apunta a este commit y vemos como este commit tiene una flecha que enlaza con el de master, que es el que fue el origen.
+
+Nos damos cuenta de que en master hay un pequeño bug
+
+```bash
+# cambiamos a la rama master
+git switch master
+
+# editamos el fichero en el editor..
+nvim fichero-bug.c
+
+# grabamos el commit en la rama master
+git commit -am "bug fixed"
+```
+
+![[Pasted image 20240606000122.png]]
+
+Ahora vemos como las ramas empiezan a divergir.
+
+Hemos encontrado otro pequeño bug en la rama principal que debemos arreglar.
+
+```bash
+# editamos claro
+nvim otro-fichero-bugeado.c
+
+# grabamos el commit en master
+git commit -am "another bug fixed"
+```
+
+![[Pasted image 20240606000919.png]]
+
+Con esto podemos ver como se han ido separando las ramas y como con *git switch* podríamos cambiar de una rama a otra, ahora vamos a ver como fusionarlas.
+
+### Fusionado_ramas
+
+Las ramas pueden ser fusionadas o pueden terminar en el olvido para no terminar en ningún lado pues descartamos las modificaciones.
+
+Cuando hablamos de fusión nos referimos a que los cambios que hemos realizado en una rama se integran en otra rama, normalmente este tipo de fusión ocurre de una rama a la rama principal.
+
+*git merge* el comando para fusionar ramas.
+
+El uso es estando en la rama destino, lanzamos el comando y el nombre de la rama, para seguir con el ejemplo anterior, sería algo como git merge my-branch desde la rama main.
+
+```bash
+# nos aseguramos de estar en la rama destino
+git branch --show-current
+$ main
+
+# vamos a incorporar los cambios de my-branch
+git merge my-branch
+```
+
+![[Pasted image 20240606004302.png]]
+
+Al ejecutar el comando git merge, se crea un nuevo commit que incluye todos los cambios de la rama de origen en la que nos encontramos ahora.
+
