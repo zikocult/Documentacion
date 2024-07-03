@@ -220,5 +220,5 @@ En el caso de xf86-video tenemos los siguientes paquetes:
 Instalación audio (en este punto estoy usando pulse, pero se puede cambiar por piperwire y revisar que no lo instale plasma por defecto, si fuera así, podemos obviar este paso)
 
 ```bash
-sudo pacman -S pulseaudio pulseaudio-alas pavucontrol
+sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol
 ```
