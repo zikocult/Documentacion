@@ -8,7 +8,7 @@ if [ $# -ge 1 ]; then
 		exit 0
 	fi
 fi
-echo "¿Pues que repositorio quieres actualizar? (cursus/docs/begin/all/none): " respuesta
+echo "¿Cuál es el repositorio que quieres actualizar?"
 echo "	1: Cursus42"
 echo "	2: Documentacion"
 echo "	3: begin"
