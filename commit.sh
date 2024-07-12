@@ -11,9 +11,14 @@ if [ "$#" -ge 1 ]; then
 		exit 0
 	fi
 fi
-read -p "¿Quieres realizar el commit en algún repositorio en concreto? (cursus/docs/begin/none): " RESP
+echo "¿Quieres realizar el commit en algún repositorio en concreto?"
+echo "	1: Cursus42"
+echo "	2: Documentacion"
+echo "	3: begin"
+echo "	4: Ninguno"
+read -p "	Opción: " RESP
 case $RESP in
-	"cursus")
+	"1")
 		cd ./Cursus42/
 		git add .
 		read -p "Descripción del commit: " DESC
@@ -21,7 +26,7 @@ case $RESP in
 		git push origin HEAD
 		exit 0
 		;;
-	"docs")
+	"2")
 		cd ./Documentacion/
 		git add .
 		read -p "Descripción del commit: " DESC
@@ -29,7 +34,7 @@ case $RESP in
 		git push origin HEAD
 		exit 0
 		;;
-	"begin")
+	"3")
 		cd ./begin/
 		git add .
 		read -p "Descripción del commit: " DESC
@@ -37,7 +42,7 @@ case $RESP in
 		git push origin HEAD
 		exit 0
 		;;
-	"none")
+	"4")
 		echo "No se actualizará ningún repositorio"
 		exit 0
 		;;

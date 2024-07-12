@@ -8,24 +8,18 @@ if [ $# -ge 1 ]; then
 		exit 0
 	fi
 fi
-read -p "¿Quieres realizar un pull de alguno o todos los repositorios? (y/a/n): " respuesta
-if [ $respuesta == "n" ]; then
-	exit 1
-elif [ $respuesta == "a" ]; then
-	cd ./Cursus42/
-	git pull
-	cd ../Documentacion/
-	git pull
-	cd ../begin/
-	git pull
-	exit 0
-fi
-read -p "¿Pues que repositorio quieres actualizar? (cursus/docs/begin/all/none): " respuesta
+echo "¿Pues que repositorio quieres actualizar? (cursus/docs/begin/all/none): " respuesta
+echo "	1: Cursus42"
+echo "	2: Documentacion"
+echo "	3: begin"
+echo "	4: Todos los repositorios"
+echo "	5: Ningun repositorio"
+read -p "	Respuesta: " respuesta
 case $respuesta in
-	"cursus") cd ./Cursus42/ && git pull ;;
-	"begin") cd ./begin/ && git pull ;;
-	"docs") cd ./Documentacion/ && git pull ;;
-	"all") cd ./Cursus42/ && git pull && cd ../Documentacion/ && git pull && cd ../begin/ && git pull && exit 0 ;;
-	"none") echo "No se ha actualizado ningun repositorio" && exit 1 ;;
+	"1") cd ./Cursus42/ && git pull ;;
+	"2") cd ./begin/ && git pull ;;
+	"3") cd ./Documentacion/ && git pull ;;
+	"4") cd ./Cursus42/ && git pull && cd ../Documentacion/ && git pull && cd ../begin/ && git pull && exit 0 ;;
+	"5") echo "No se ha actualizado ningun repositorio" && exit 1 ;;
 	*) echo "No has introducido una respuesta valida" && exit 1 ;;
 esac
