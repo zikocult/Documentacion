@@ -16,7 +16,8 @@ echo "	1: Cursus42"
 echo "	2: Documentacion"
 echo "	3: begin"
 echo "	4: Ninguno"
-read -p "	Opción: " RESP
+echo " "
+read -p "Respuesta: " RESP
 case $RESP in
 	"1")
 		cd ./Cursus42/

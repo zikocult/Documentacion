@@ -14,7 +14,8 @@ echo "	2: Documentacion"
 echo "	3: begin"
 echo "	4: Todos los repositorios"
 echo "	5: Ningun repositorio"
-read -p "	Respuesta: " respuesta
+echo " "
+read -p "Respuesta: " respuesta
 case $respuesta in
 	"1") cd ./Cursus42/ && git pull ;;
 	"2") cd ./begin/ && git pull ;;
