@@ -165,3 +165,39 @@ Aquí está el desglose:
 - En la línea 28-35, se define la función `main`, que es el punto de entrada del programa. En la línea 30, se inicializa `octet` con el carácter `'a'`. Luego, en la línea 32, se llama a `print_bits` con `octet` como argumento, lo que imprime la representación binaria de `'a'`. Finalmente, se imprime una nueva línea y el programa termina.
 
 Puedes cambiar el caracter 'a' por un número y lo traducirá sin problemas.
+
+#### Mejorando el anterior código
+
+En el anterior código, hemos supuesto que el sistema al que estamos accediendo un byte = 8 bits,  pero si eso no fuera correcto, podemos recurrir a **CHAR_BIT**,  definición que está dentro de la librería **limits.h**.
+
+Por otra parte, podría darse el caso, que no fuera un char la variable usado, para eso, podemos usar **sizeof(variable)**
+
+El código mejorado quedaría tal que:
+
+```c
+#include <unistd.h>
+#include <limits.h>
+
+void	print_bits(unsigned char octet)
+{
+	int				i;
+	unsigned char	bit;
+// Con CHAR_BIT asguramos el tamaño del byte en un sistema
+// Con el sizeof, la cantidad de bytes por el tipo de variable usado
+	i = CHAR_BIT * sizeof(octet);
+	while (i--)
+	{
+		bit = (octet >> i & 1) + '0';
+		write(1, &bit, 1);
+	}
+}
+ 
+int main(void) 
+{
+    unsigned char octet = 'a';
+
+	print_bits(octet);
+	write(1, "\n", 1);
+    return (0);
+}
+```
