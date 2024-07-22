@@ -17,10 +17,10 @@ echo "	5: Ningun repositorio"
 echo " "
 read -p "Respuesta: " respuesta
 case $respuesta in
-	"1") cd ./Cursus42/ && git pull ;;
-	"2") cd ./begin/ && git pull ;;
-	"3") cd ./Documentacion/ && git pull ;;
-	"4") cd ./Cursus42/ && git pull && cd ../Documentacion/ && git pull && cd ../begin/ && git pull && exit 0 ;;
+	"1") cd Cursus42/ && git pull ;;
+	"2") cd begin/ && git pull ;;
+	"3") cd Documentacion/ && git pull ;;
+	"4") cd Cursus42/ && git pull && cd ../Documentacion/ && git pull && cd ../begin/ && git pull && exit 0 ;;
 	"5") echo "No se ha actualizado ningun repositorio" && exit 1 ;;
 	*) echo "No has introducido una respuesta valida" && exit 1 ;;
 esac
