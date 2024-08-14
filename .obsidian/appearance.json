@@ -1,11 +1,11 @@
 {
   "accentColor": "#0088ee",
-  "nativeMenus": false,
+  "nativeMenus": true,
   "cssTheme": "Obsidian Nord",
   "interfaceFontFamily": "Poppins",
   "textFontFamily": "Poppins",
   "showViewHeader": true,
   "theme": "obsidian",
   "monospaceFontFamily": "Fira Code",
-  "baseFontSize": 15
+  "baseFontSize": 16
 }
