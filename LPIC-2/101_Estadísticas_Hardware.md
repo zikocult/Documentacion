@@ -7,15 +7,19 @@
 		- [[#ps]]
 		- [[#pstree]]
 		- [[#pmap]]
+		- [[#Procesos congelados]]
 	- [[#lsof]]
 	- [[#iostat]]
 - [[#Memoria]]
 	- [[#free]]
 	- [[#vmstat]]
+	- [[#Puntos clave de la memoria]]
 - [[#Disco]]
 	- [[#iotop]]
 	- [[#iostat]]
+	- [[#Métricas SAR]]
 - [[#Redes]]
+	- [[#ntop / ntopng]]
 	- [[#iftop]]
 	- [[#mtr]]
 	- [[#Otras herramientas]]
@@ -135,6 +139,8 @@ top -Hp <PID>
 ps --user <nombre_usuario>
 # Con esto filtraremos todo lo que esté corriendo apache
 ps aux | grep apache
+# Listar procesos por consumo de memoria
+ps --sort size
 ```
 
 Cuando hagamos el filtraje con grep, tengamos en cuenta, que el primer servicio con el PID mas bajo, será el proceso padre, es decir, el que controla a todo el resto, en el caso de la imagen, el PID 463 controla todo el servicio ssh.
@@ -156,6 +162,16 @@ El PID lo he sacado previamente con PS:
 Con *pmap \<pid>* , podremos ver todo lo que esté relacionado con un proceso, incluidas librerías o lo que requiera el proceso.
 
 ![[Pasted image 20241001113602.png]]
+
+#### Procesos congelados
+
+Son los procesos que típicamente están con un 0 en utilización de CPU pero aún y así consumen RAM.
+
+La forma mas sencilla de encontrarlos sería con `ps`,  una vez encontrado, lo mataríamos con `kill`, típicamente el comando usado sería:
+
+```bash
+kill -9 <PID>
+```
 
 ### lsof
 
@@ -206,12 +222,26 @@ Con la opción s buscamos un refresco de la info cada 2 segundos.
 Es otra utilidad para ver la memoria, su uso mas normal sería:
 
 ```bash
+# Con esto marcamos que las unidades sean en Megas y que lo refresque cada dos segundos.
 vmstat --unit M 2
+# Ahora simplemente tendremos un resumen
+vmstat -s
 ```
 
-Con esto marcamos que las unidades sean en Megas y que lo refresque cada dos segundos.
-
 ![[Pasted image 20241001115844.png]]
+
+### Puntos clave de la memoria
+
+- Page in
+	- Normalmente bueno
+	- Algo está entrando en RAM
+- Page out
+	- Bueno en pequeñas cantidades
+	- Malo en cantidades grandes
+	- Algo está volcando para liberar espacio
+- Swap in
+	- Malo, pero en pequeñas cantidades es aceptable
+	- Algo está moviendo desde la RAM al disco
 
 ## Disco
 
@@ -242,6 +272,15 @@ iostat -xt --human /dev/sda
 
 ![[Pasted image 20241001121247.png]]
 
+### Métricas SAR
+
+| Métrica | Resumen                   |
+| ------- | ------------------------- |
+| rtps    | Read requests per second  |
+| wtps    | Write requests per second |
+| bread/s | Blocks read per second    |
+| bwrtn/s | Blocks written per second |
+
 ## Redes
 
 Para redes, no hay herramientas estándar, las herramientas que hay se van a sacar de diferentes paquetes, pero no vamos a usar ninguna que necesite entorno gráfico, todas serán por terminal y recomendadas.
@@ -251,6 +290,15 @@ La excepción, sería como siempre sar -n, pero en este caso debemos introducir 
 ```bash
 sar -n DEV
 ```
+
+### ntop / ntopng
+
+Este simplemente lo comentaré un poco por encima, pues sale del contexto de aplicaciones sólo por terminal.
+
+- [ntopng website](https://www.ntop.org/products/traffic-analysis/ntop/)
+- `sudo apt install ntopng`
+- Alta carga de dependencias, con lo que no lo hace recomendable
+- Corre un servidor web
 
 ### iftop
 

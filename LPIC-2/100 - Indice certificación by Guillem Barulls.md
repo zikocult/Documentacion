@@ -8,17 +8,37 @@
 			- ps
 			- pstree
 			- pmap
+			- Procesos congelados
 		- lsof
 		- iostat
 	- Memoria
 		- free
 		- vmstat
+		- Puntos claves de la memoria
 	- Disco
 		- iotop
 		- iostat
+		- Métricas SAR
 	- Redes
+		- ntop / ntopng
 		- iftop
 		- mtr
 		- Otras herramientas
 - [102 - Kernel](102_Kernel.md)
-- 
+	- Introducción
+	- Módulos del Kernel
+		- Vista de los módulos cargados
+		- Habilitar y deshabilitar módulos
+		- Verificando módulos
+		- udev
+	- Compilación de un Kernel
+		- Prerequisitos
+		- Conseguir el código fuente
+		- Creación del fichero de configuración
+		- Compilando un nuevo kernel
+		- initrd y initramfs
+		- Compilando módulos del Kernel
+	- Monitorización del Kernel
+		- /proc
+		- Cambiando valores en /proc
+			- Cambiando valores con sysctl
