@@ -1,4 +1,4 @@
-- [101 - Arquitectura de sistema](./101_Arquitectura)
+- [101 - Arquitectura de sistema](101_Arquitectura.md)
 	- Identificar y editar configuraciones de hardware
 		- Activación de dispositivos
 		- Inspección de dispositivos
@@ -14,7 +14,7 @@
 		- Apagar y reiniciar
 
 &nbsp;
-- [102 - Instalación de Linux y administración de paquetes](./102_Instalacion_administracion.md)
+- [102 - Instalación de Linux y administración de paquetes](102_Instalacion_administracion.md)
 	- Dimensionar las particiones del disco
 		- Sistema archivos raíz
 		- Orden de montaje a partir del Boot
@@ -33,7 +33,7 @@
 		- Acceso seguro (SSH)
 
 &nbsp;
--  [103 - Comandos GNU y Unix](./103_comandos.md)
+-  [103 - Comandos GNU y Unix](103_comandos.md)
 	- Trabajar en la línea de comandos
 		- Shell Bash
 		- Variables
@@ -62,7 +62,7 @@
 	- VI
 
 &nbsp;
-- [104 - Dispositivos, sistemas de archivos y FHS](./104_Sistema_archivos.md)
+- [104 - Dispositivos, sistemas de archivos y FHS](104_Sistema_archivos.md)
 	- Crear particiones y sistemas de archivos
 		- fdisk
 		- PARTED
@@ -88,7 +88,7 @@
 		- Localización de archivos
 
 &nbsp;
-- [105 - Shells, scripts y administración de datos](./105_Shells_scripts_y_admin_datos)
+- [105 - Shells, scripts y administración de datos](105_Shells_scripts_y_admin_datos.md)
 	- Personalizar y trabajar en el entorno de shell
 		- Variables
 			- Globales
@@ -112,7 +112,7 @@
 		- Relación de tablas
 
 &nbsp;
-- [106 - Interfaces de usuario y escritorio](./106_Interfaces_de_usuario_y_de_escritorio)
+- [106 - Interfaces de usuario y escritorio](106_Interfaces_de_usuario_y_de_escritorio.md)
 	- Instalar y configurar X11
 		- Hardware
 		- Instalación y configuración
@@ -123,7 +123,7 @@
 	- Accesibilidad
 
 &nbsp;
-- [107 - Tareas administrativas](./107_Tareas_administrativas)
+- [107 - Tareas administrativas](107_Tareas_administrativas.md)
 	- Cuentas de usuarios
 	- Grupos de usuarios
 	- Automatizar y programar tareas
@@ -132,20 +132,20 @@
 	- Localización e internacionalización
 
 &nbsp;
-- [108 - Servicios esenciales del sistema](./108_Servicios_esenciales_del_sistema)
+- [108 - Servicios esenciales del sistema](108_Servicios_esenciales_del_sistema.md)
 	- Mantenimiento de la fecha y hora del sistema
 	- Configurar y recurrir a los archivos LOG
 	- Fundamentos MTA: Mail Transfer Agent
 	- Configuración de impresoras e impresión (CUPS)
 
 &nbsp;
-- [109 - Fundamentos de red](./109_Fundamentos_de_red)
+- [109 - Fundamentos de red](109_Fundamentos_de_red.md)
 	- Fundamentos de los protocolos de internet (IP)
 	- Configuración básica de red
 	- Soluciones de problemas simples
 
 &nbsp;
-- [110 - Seguridad](./110_Seguridad)
+- [110 - Seguridad](110_Seguridad.md)
 	- Permisos y root
 		- Verificación de permisos
 		- Acceso como root

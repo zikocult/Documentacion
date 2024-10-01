@@ -1,0 +1,65 @@
+- [[#Introducción]]
+
+## Introducción
+
+- Kernels de los sistemas operativos
+	- Permite al software acceder al hardware
+	-  Asignar recursos de hardware para cumplir con las solicitudes de software
+	- Manejar eventos multi tarea
+	- Actuar como policía de tráfico
+- El Kernel de Linux
+	- Desarrollado por Linus Torvalds
+		- Diseñado para emular UNIX
+	- Independiente
+	- Open source
+	- Realizado con el esfuerzo de incontables contribuciones por parte de programadores para formar Linux
+- Trabajo del Kernel:
+	- No depende del Kernel
+		- Aplicaciones
+		- Windows managers
+		- Herramientas GNU
+		- Sistemas de inicio
+	- Si depende del Kernel
+		- Tratamiento de la memoria
+		- Tratamiento de procesos
+		- Control del hardware
+		- Disk file Systems
+- El Kernel
+	- Normalmente almacenado en `/boot`
+	- Varios posibles nombres del fichero en si
+	- Nombres descomprimido
+		- `kernel`
+		- `vmlinux`
+	- Nombres comprimido
+		- `vmlinuz` (el mas común)
+		- `zImage`
+		- `bzImage`
+	- Normalmente la compresión es con GNU Zip (gzip)
+	- Carga en RAM de una imagen
+		- La carga se realiza como un FS por parte de GRUB
+		- Lo encontramos como: `/boot/initrd.img`
+		- Es sólo la imagen de los módulos necesarios por tu sistema, así que su tamaño dependerá de tu hardware.
+- Kernels monolíticos
+	- Los kernel monolíticos actúan como un gran proceso únicamente.
+	- Los micro kernels parten el kernel en múltiples procesos.
+	- Linux es molítico
+	- El kernel de Linux soporta la lectura de módulos que expanden su funcionalidad.
+		- Normalmente ubicado en `/lib/modules`
+		- `/lib/modules/5.8.0-45-generic/kernel`
+	- Documentación del Kernel
+		- Documentación instalada
+			-  `/usr/src/linux/Documentation/`
+			- `/usr/share/doc/linux-doc/`
+		- Instalando documentación
+			- `sudo apt install linux-doc`
+			- `sudo apt install linux-source`
+		- Escrito en reStructuredText usando Sphinx
+			- `make htmldocs`
+			- `make pdfdocs`
+		- Se pueden visualizar online en:
+			- [https://www.kernel.org/doc/html/latest](https://www.kernel.org/doc/html/latest)
+	- Kernel headers
+		- Mínimo de ficheros necesarios para compilar módulos
+		- Usado para validar las funciones de llamada al kernel
+			-  ¿Coincide la salida producida con lo que la función espera?
+		- Mucho mas pequeño que el código fuente entero del kernel.

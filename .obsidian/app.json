@@ -10,5 +10,6 @@
     "downscalePercent": 100
   },
   "promptDelete": false,
-  "trashOption": "none"
+  "trashOption": "none",
+  "alwaysUpdateLinks": true
 }
