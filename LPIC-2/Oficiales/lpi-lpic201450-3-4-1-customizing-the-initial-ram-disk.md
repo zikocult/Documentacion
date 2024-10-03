@@ -1,4 +1,4 @@
-## Customizing the Initial RAM Disk  
+	## Customizing the Initial RAM Disk  
 ##### LPIC-2: Linux Engineer (201-450)  
 
 ### Objectives:  
