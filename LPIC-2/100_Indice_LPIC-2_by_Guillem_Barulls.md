@@ -1,0 +1,67 @@
+- [Notas del profesor de Udemy](./Teacher_notes/Index_Teacher_Course_(Udemy).md)
+
+1. [101 - Estadísticas y monitorización de hardware](101_Estadísticas_Hardware.md)
+	- Introducción
+		- SysStat
+		- Básicas
+	- CPU
+		- top
+		- Procesos
+			- ps
+			- pstree
+			- pmap
+			- Procesos congelados
+		- lsof
+		- iostat
+	- Memoria
+		- free
+		- vmstat
+		- Puntos claves de la memoria
+	- Disco
+		- iotop
+		- iostat
+		- Métricas SAR
+	- Redes
+		- ntop / ntopng
+		- iftop
+		- mtr
+		- Otras herramientas
+2. [102 - Kernel](102_Kernel.md)
+	- Introducción
+	- Módulos del Kernel
+		- Vista de los módulos cargados
+		- Habilitar y deshabilitar módulos
+		- Verificando módulos
+		- udev
+	- Compilación de un Kernel
+		- Prerequisitos
+		- Conseguir el código fuente
+		- Creación del fichero de configuración
+		- Compilando un nuevo kernel
+		- initrd y initramfs
+		- Compilando módulos del Kernel
+	- Monitorización del Kernel
+		- /proc
+		- Cambiando valores en /proc
+			- Cambiando valores con sysctl
+3. [103 - System Startup](103_System_startup.md)
+	- Introducción
+	- SystemD init
+	- SysV init
+	- System Recovery with GRUB
+		- Corrigiendo los menús de GRUB
+		- Recuperando un GRUB dañado en un sistema
+	- Personalización InitRAM disk
+		- Modificación y empaquetado initrd
+4. [104 - Filesystem y dispositivos](104_Filesystem_and_Devices.md)
+	- Fstab configuration
+		- Información requerida
+		- Modificando fstab
+		- Errores comunes de fstab
+	- Memoria SWAP
+		- Crear nuevo espacio de Swap
+		- Modificar la Swap
+	- Montaje de unidades con SystemD
+	- BRTFS (B-Tree FileSystem)
+		- Subvolúmenes y snapshots
+	- Trabajando con almacenamiento encriptado

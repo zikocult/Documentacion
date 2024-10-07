@@ -1,0 +1,40 @@
+- [Notas propias](../100_Indice_LPIC-2_by_Guillem_Barulls)
+1. Capacity Planning
+	- [Capacity planning](lpi-lpic201450-1-1-1-capacity-planning.md)
+	- [Measuring CPU Activity](lpi-lpic201450-1-2-1-measuring-cpu-activity.md)
+	- [Measuring Memory Activity](lpi-lpic201450-1-3-1-measuring-memory-usage.md)
+	- [Measuring Disk Activity](lpi-lpic201450-1-4-1-measuring-disk-activity.md)
+	- [Measuring Network Activity](lpi-lpic201450-1-5-1-measuring-network-activity.md)
+2. Linux Kernel
+	- [Kernel Components](lpi-lpic201450-2-1-1-kernel-components.md)
+	- [Kernel Modules](lpi-lpic201450-2-2-1-kernel-modules.md)
+	- [Compiling a Kernel](lpi-lpic201450-2-3-1-compiling-a-kernel.md)
+	- [Monitoring the Kernel](lpi-lpic201450-2-4-1-monitoring-the-kernel.md)
+3. System Startup
+	- [Managing systemd](lpi-lpic201450-3-1-1-managing-systemd.md)
+	- [Managing SysV init](lpi-lpic201450-3-2-1-managing-sysv-init.md)
+	- [System Recovery with GRUB](lpi-lpic201450-3-3-1-system-recovery-with-grub.md)
+	- [Customizing the Initial RAM Disk](lpi-lpic201450-3-4-1-customizing-the-initial-ram-disk.md)
+4. Filesystem and Devices
+	- [FSTAB configuration](lpi-lpic201450-4-1-1-fstab-configuration.md)
+	- [Swap Partitions](lpi-lpic201450-4-2-1-swap-partitions.md)
+	- [Systemd Mount Units](lpi-lpic201450-4-3-1-systemd-mount-units.md)
+	- [Supporting Btrfs](lpi-lpic201450-4-4-1-supporting-btrfs.md)
+	- [Working with Encrypted Storage](lpi-lpic201450-4-5-1-working-with-encrypted-storage.md)
+5. Advanced Device Administration
+	- [Configurin RAID](lpi-lpic201450-5-1-1-configuring-raid.md)
+	- [Supporting IDE and SATA Disks](lpi-lpic201450-5-2-1-supporting-ide-and-sata-disks.md)
+	- [Supporting Solid State Disks](lpi-lpic201450-5-3-1-supporting-solid-state-disks.md)
+	- [iSCI and SAN Storage](lpi-lpic201450-5-4-1-iscsi-and-san-storage.md)
+	- [Logical Volume Manager](lpi-lpic201450-5-5-1-logical-volume-manager.md)
+6. Network Configuration
+	- [Configuring Physical Adapters](lpi-lpic201450-6-1-1-configuring-physical-adapters.md)
+	- [Configuring Wireless Adapters](lpi-lpic201450-6-2-1-configuring-wireless-adapters.md)
+	- [Troubleshooting Network Connectivity](lpi-lpic201450-6-3-1-troubleshooting-network-connectivity.md)
+	- [Troubleshooting Name Resolution](lpi-lpic201450-6-4-1-troubleshooting-name-resolution.md)
+7. System Manteinance
+	- [Installing Programs from Source](lpi-lpic201450-7-1-1-installing-programs-from-source.md)
+	- [Backing up with tar](lpi-lpic201450-7-2-1-backing-up-with-tar.md)
+	- [Backing up with dd](lpi-lpic201450-7-3-1-backing-up-with-dd.md)
+	- [Backing up with rsync](lpi-lpic201450-7-4-1-backing-up-with-rsync.md)
+	- [Communicating with Users](lpi-lpic201450-7-5-1-communicating-with-users.md)
