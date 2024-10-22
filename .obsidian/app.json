@@ -9,7 +9,9 @@
     "margin": "0",
     "downscalePercent": 90
   },
-  "promptDelete": false,
+  "promptDelete": true,
   "trashOption": "none",
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "showRibbon": true,
+  "showInlineTitle": true
 }
