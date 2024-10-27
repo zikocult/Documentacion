@@ -184,3 +184,55 @@ int main(void)
 	return (0); 
 }
 ```
+
+### Gettimeofday
+
+Mayoritariamente he sacado la info de la página [esta](https://thelinuxcode.com/gettimeofday_c_language/)
+
+El prototipo de la función en si vendría a ser:
+
+```c
+int gettimeofday(struct timeval *tv, struct timezone *tz);
+```
+
+Como podemos ver, recoge dos argumentos, que son dos estructuras.
+- tv: esta estructura recogerá el tiempo a devolver
+- tz: Timezone (normalmente simplemente pásaremos NULL)
+
+La función devolverá 0 si es éxitosa o -1 si por alguna razón da error.
+
+La estructura *timeval* tendrá la siguiente forma:
+
+```c
+struct timeval {
+  time_t      tv_sec;   // seconds since epoch
+  suseconds_t tv_usec;  // microseconds
+};
+```
+
+- El campo *tv_sec* almacena 
+
+```c
+#include <stdio.h>
+#include <sys/time.h>
+#include <unistd.h>
+
+int main() {
+
+	struct timeval start, end;
+
+	if (gettimeofday(&start, NULL) == -1)
+		return (0);
+	for (int i = 0; i < 1000000; i++) {
+	  // Do something
+	}
+	// usleep també congela el temps que conta gettimeofday
+		usleep(5000000);
+	if (gettimeofday(&end, NULL) == -1)
+		return (0);
+	printf("End.tv_sec %ld - Start.tv_sec %ld = %ld\n", end.tv_sec, start.tv_sec, end.tv_sec - start.tv_sec);
+	printf("End.tv_usec %ld - Start.tv_usec %ld = %ld\n", end.tv_usec,start.tv_usec, end.tv_usec - start.tv_usec);
+	printf("Elapsed: %ld microseconds\n", (end.tv_sec * 1000000 + end.tv_usec) - (start.tv_sec * 1000000 + start.tv_usec));
+	return 0;
+}
+```
