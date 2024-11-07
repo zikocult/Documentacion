@@ -7,7 +7,7 @@ Añado el código de prueba que he estado usando para probar todos y así ir pon
 En primer lugar, lo compilaríamos tal que:
 
 ```bash
-gcc -Wall -Wextra -Werror camel_to_snake.c -o camel
+gcc -Wall -Wextra -Werror camel_to_snake.c -o camel -g
 ```
 
 y este sería el código fuente, como se verá, necesita argumentos, parte fundamental para mi en este momento de aprendizaje, así como el paso a funciones, por eso he añadido una función simple, lo dejo por si se quieren realizar pruebas con toda la info contenida en este documento.
