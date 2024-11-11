@@ -65,3 +65,13 @@
 	- BRTFS (B-Tree FileSystem)
 		- Subvolúmenes y snapshots
 	- Trabajando con almacenamiento encriptado
+5. [Configurando un RAID](105_Advanced_device_adminnistration.md)
+	- Creación de un RAID por software
+	- Soporte a discos IDE y SATA
+	- Soporte a discos SSD]
+		- SSD
+		- NVMe
+	- iSCSI and SAN Storage
+		- Accediendo a los SAN por red
+		- Usando iSCSI
+	- Logical Volume Manager (LVM)

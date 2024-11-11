@@ -1,7 +1,7 @@
 {
   "accentColor": "#0088ee",
   "nativeMenus": true,
-  "cssTheme": "Obsidian Nord",
+  "cssTheme": "Obsidian gruvbox",
   "interfaceFontFamily": "Poppins",
   "textFontFamily": "Poppins",
   "showViewHeader": true,
