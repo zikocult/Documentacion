@@ -42,14 +42,20 @@ sudoedit /etc/sysconfig/network-scripts/ifcfg-enl
 ```
 
 >También podemos reescribir la configuración con `NetworkManager`
->Jo he trobat a Fedora la config a un altre lloc, adjunto pantallasso
+
+>Yo he encontrado la configuación en otro lado, adjunto una serie de pantallazos ilustrativos.
 
 ![[Pasted image 20241111125751.png]]
+
+>Esta es mi conexión cableada en un `Fedora`:
 
 ![[Pasted image 20241111130044.png]]
 
 >Dentro de la carpeta mostrada, encontraremos cada una de las configuraciones de red, yo me he encontrado todos los SSID guardados en el portátil `(arch BTW)` como una configuración de red individual cada una.
->Los archivos individuales son ficheros planos, contienen inclusive los passkey, pero sólo los puede leer *root*
+
+>Los archivos individuales son ficheros planos, contienen inclusive los passkey (he señalado borrando la mía de ejemplo), pero sólo los puede leer y/o acceder a la carpeta *root*
+
+![[Pasted image 20241111131334.png]]
 
 *Debian*
 
