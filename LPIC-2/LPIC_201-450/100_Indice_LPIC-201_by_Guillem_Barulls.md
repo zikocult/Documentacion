@@ -1,4 +1,4 @@
-- [Notas del profesor de Udemy](./Teacher_notes/Index_Teacher_Course_(Udemy).md)
+- [Notas del profesor de Udemy](Index_Teacher_Course_201(Udemy).md)
 
 1. [101 - Estadísticas y monitorización de hardware](101_Estadísticas_Hardware.md)
 	- Introducción
@@ -75,3 +75,20 @@
 		- Accediendo a los SAN por red
 		- Usando iSCSI
 	- Logical Volume Manager (LVM)
+
+6. [Configuraciones de red](106_Network_configuration.md)
+	- Configurando adaptadores físicos
+		- DHCP
+		- Reiniciando/configurando los servicios de red
+		- Configuración usando configuraciones globales
+		- Configurando usando NetwokManager
+	- Configurando adaptadores wireless
+	- Solventar problemas de red
+	- Problemas con la resolución de nombres
+7. [Mantenimiento del sistema](107_Mantenimiento_del_sistema.md)
+	- Instalación desde el código fuente
+		- Ejemplo de descarga de código
+	- Realizando backups con TAR
+	- Realizando backups con DD
+	- Realizando backups con RSYNC
+	- Comunicación con usuarios

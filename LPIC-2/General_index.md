@@ -1,0 +1,22 @@
+- LPIC 201-450
+	- Contenido:
+		- [Estadísticas y monitorización de hardware](./LPIC_201-450/101_Estadísticas_Hardware.md)
+		- [Kernel](./LPIC_201-450/102_Kernel.md)
+		- [System Startup](./LPIC_201-450/102_Kernel.md)
+		- [Filesystem y dispositivos](./LPIC_201-450/103_System_startup.md)
+		- [Configurando un RAID](./LPIC_201-450/104_Filesystem_and_Devices.md)
+		- [Advanced Device administration](./LPIC_201-450/105_Advanced_device_adminnistration.md)
+		- [Network Configuration](./LPIC_201-450/106_Network_configuration.md)
+		- [Mantenimiento del sistema](./LPIC_201-450/107_Mantenimiento_del_sistema.md)
+	- [Mis notas LPIC 201-450](100_Indice_LPIC-201_by_Guillem_Barulls.md)
+	-  [Notas del profesor 201-450](Index_Teacher_Course_201(Udemy).md)
+- LPIC 202-450
+	- Contenido:
+		- Domain Name Server (DNS)
+		- Web Services
+		- File Sharing
+		- Network Client Management
+		- E-mail Services
+		- System Security
+	- [Mis notas LPIC 202-450](./LPIC_202-450/100_Indice_LPIC-202_by_Guillem_Barulls.md)
+	-  [Notas del profesor 202-450](Index_Teacher_Course_202(Udemy).md)

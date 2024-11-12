@@ -1,4 +1,4 @@
-- [Notas propias](../100_Indice_LPIC-2_by_Guillem_Barulls)
+- [Notas propias](100_Indice_LPIC-201_by_Guillem_Barulls.md)
 1. Capacity Planning
 	- [Capacity planning](lpi-lpic201450-1-1-1-capacity-planning.md)
 	- [Measuring CPU Activity](lpi-lpic201450-1-2-1-measuring-cpu-activity.md)
