@@ -12,11 +12,11 @@
 	-  [Notas del profesor 201-450](Index_Teacher_Course_201(Udemy).md)
 - LPIC 202-450
 	- Contenido:
-		- Domain Name Server (DNS)
-		- Web Services
+		- [Domain Name Server (DNS)](201_Domain_Name_Server.md)
+		- [Web Services](202_Web_Services.md)
 		- File Sharing
 		- Network Client Management
 		- E-mail Services
 		- System Security
-	- [Mis notas LPIC 202-450](./LPIC_202-450/100_Indice_LPIC-202_by_Guillem_Barulls.md)
+	- [Mis notas LPIC 202-450](200_Indice_LPIC-202_by_Guillem_Barulls.md)
 	-  [Notas del profesor 202-450](Index_Teacher_Course_202(Udemy).md)

@@ -1,4 +1,4 @@
-[Notas propias](100_Indice_LPIC-202_by_Guillem_Barulls.md)
+[Notas propias](200_Indice_LPIC-202_by_Guillem_Barulls.md)
 
 1. Domain Name Server
 	- [Overview](lpi-lpic202450-0-0-0-outline.md)

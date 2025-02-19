@@ -7,5 +7,6 @@
   "showViewHeader": true,
   "theme": "obsidian",
   "monospaceFontFamily": "Fira Code",
-  "baseFontSize": 16
+  "baseFontSize": 16,
+  "showRibbon": true
 }
