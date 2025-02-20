@@ -5,7 +5,7 @@ Funciones autorizadas:
 - [[#Malloc and Free]]
 - [[#Write]]
 - [[#Usleep]]
-- gettimeofday
+- [[#Gettimeofday]]
 - pthread_create
 - pthread_detach
 - pthread_join
@@ -236,3 +236,18 @@ int main() {
 	return 0;
 }
 ```
+
+### Pthread_create
+
+```c
+ include <pthread.h>
+```
+
+```c
+ int pthread_create(pthread_t *restrict thread,
+                          const pthread_attr_t *restrict attr,
+                          void *(*start_routine)(void *),
+                          void *restrict arg);
+```
+
+ááááñññññññññññnnnnnnnnnn'a'a'a'a'a'a'
