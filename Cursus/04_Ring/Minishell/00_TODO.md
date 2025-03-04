@@ -35,12 +35,12 @@
 		- [x] Controlar la entrada de carácteres invisibles (saltos de linea, tabulación, etc)
 	- [x] Hay que revisar las entradas con *'* y *"*, per ejemplo una entrada com *" ' $USER " '* tendria que dar error.
 	- [x] Incluir lo anterior en el *validation_parse*
-- [ ] **ENV_builtin**
-	- [ ] Entrada para nueva variable:
-		- [ ] Separación de la entrada de comando *a=a* por ejemplo, para realizar la asignación, va ligado al siguiente punto, pero en este caso tenemos que revisar.
-		- [ ] La revisión la quiero realizar con una función que revise el comando y que dicho comando tenga "*variable=contenido*"
-		- [ ] Anotar que es un error que la variable sea *"numero=contenido*
-		- [ ] Queda la exportacion de variables, en este caso, siempre debe estar el parametro bien puesto como *variable=contenido*
+- [x] **ENV_builtin**
+	- [x] Entrada para nueva variable:
+		- [x] Separación de la entrada de comando *a=a* por ejemplo, para realizar la asignación, va ligado al siguiente punto, pero en este caso tenemos que revisar.
+		- [x] La revisión la quiero realizar con una función que revise el comando y que dicho comando tenga "*variable=contenido*"
+		- [x] Anotar que es un error que la variable sea *"numero=contenido*
+		- [x] Queda la exportacion de variables, en este caso, siempre debe estar el parametro bien puesto como *variable=contenido*
 		- [x] No me hace bien el crear una nueva entrada en la tabla, hay que revisar con cuidado.
 	- [x] Unset
 		- [x] Problemas con la primera posición, se debe validar
@@ -48,11 +48,11 @@
 	- [x] Set (un poco mas complejo que lo anterior)
 		- [x] Revisar como dejar la variable dentro de la tabla, creo que sólo puede haber una linea por set guardado
 		- [x] Separar la linea por espacios, teniendo claro que 1 es toda la linea y las siguientes, pues cada palabra.
-	- [ ] Export
+	- [x] Export
 		- [x] Listar con solo poner export.
-		- [ ] *Export a=a* debe de crear una variable ya exportada de nombre a, valor a
-		- [ ] *export a*, buscara si existe a, si es el caso, exportara la variable a tipo export *(exp)*, si no creara una variable a con valor NULL de tipo export.
-		- [ ] Export no cambia el tipo si ya es una variable de entorno *(env)*
+		- [x] *Export a=a* debe de crear una variable ya exportada de nombre a, valor a
+		- [x] *export a*, buscara si existe a, si es el caso, exportara la variable a tipo export *(exp)*, si no creara una variable a con valor NULL de tipo export.
+		- [x] Export no cambia el tipo si ya es una variable de entorno *(env)*
 		- [x] Mirar que hace y como lo hace, lo tengo claro en scripts
 - [ ] **Signals**
 	- [ ] Empezar al acabar con **ENV**
