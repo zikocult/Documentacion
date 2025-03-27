@@ -33,6 +33,7 @@
 - [ ] **PARSEO**
 	- [ ] No se ha anotado todo lo realizado en el parseo, aunque faltan un par de cosas por completar, las iré anotando según sea necesario en este punto.
 		- [x] Controlar la entrada de carácteres invisibles (saltos de linea, tabulación, etc)
+		- [ ] Pendiente de análisis futuro, dejo este punto abierto a futuras modificaciones
 	- [x] Hay que revisar las entradas con *'* y *"*, per ejemplo una entrada com *" ' $USER " '* tendria que dar error.
 	- [x] Incluir lo anterior en el *validation_parse*
 - [x] **ENV_builtin**
@@ -55,9 +56,16 @@
 		- [x] Export no cambia el tipo si ya es una variable de entorno *(env)*
 		- [x] Mirar que hace y como lo hace, lo tengo claro en scripts
 - [ ] **Signals**
-	- [ ] Empezar al acabar con **ENV**
+	- [x] Finalizados el control + c y el control + \
+	- [ ] También está semi controlado el control + d, al menos dentro de lo que sería minishell en si, pero hay que controlar cuando esté en heredoc
+		- [x] Debo crear el heredoc e incluir ese control al control + d
+		- [x] La senyal no es llegeix si ja hi ha escrit alguna cosa dins del readline, amb el que el heredoc no pot crear-se amb el readline o no sortiria (no es així, ja ho tinc ok)
+		- [ ] tinc un error que fa que es repeteixi la readline de l'inici, haig de mirar com arreglar-ho, el problema està a dins del control + c
+		- [ ] llegir múltiples heredocs, només s'escriurà l'últim per exemple cat << a << b << c, tenim que tancar a i b i escriure el contigut de c, mirar com fer-ho.
 - [ ] **CD_builtin y movimientos por directorio**
 	- [ ] Empezar al acabar con **signals**
+- [ ] **Controlar la salida e incluirla en una variable en todos los casos**
+	- [ ] Empezar al acabar con **CD o signals**
 ## Documentación por finalizar
 
 [Indice de la documentación generada](01_Indice.md)
